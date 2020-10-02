@@ -41,6 +41,7 @@ class NoteDataState extends State<NoteData>{
           //write some code to control yhings when user press back button
           moveToLastScreen();
         },)
+        backgroundColor: Colors.blue,
 
 
       ),
@@ -79,7 +80,7 @@ class NoteDataState extends State<NoteData>{
                 },
                 style: textStyle,
                 onChanged: (value){
-                  debugPrint("someting changed in the title textfield");
+                  debugPrint("someting changed in the title textfield just now");
                   updateTitle();
                 },
                 decoration: InputDecoration(
@@ -87,7 +88,8 @@ class NoteDataState extends State<NoteData>{
                   labelStyle: textStyle,
                     errorStyle: TextStyle(
                         color: Colors.indigo,
-                        fontSize: 15.0
+                        fontSize: 15.0,
+                        fontWeight: FontWeight.bold,
                     ),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(5.0),
@@ -108,15 +110,16 @@ class NoteDataState extends State<NoteData>{
                 },
                 style: textStyle,
                 onChanged: (value){
-                  debugPrint("someting changed in the description textfield");
+                  debugPrint("someting changed in the description textfield just now");
                   updateDescripton();
                 },
                 decoration: InputDecoration(
                     labelText: 'Description',
                     labelStyle: textStyle,
                     errorStyle: TextStyle(
-                        color: Colors.indigo,
-                        fontSize: 15.0
+                        color: Colors.indigo[300],
+                        fontSize: 15.0,
+                        fontStyle: FontStyle.italic,
                     ),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(5.0),
@@ -149,7 +152,7 @@ class NoteDataState extends State<NoteData>{
                       textColor: Colors.white,
                       child: Text("Delete", textScaleFactor: 1.5,),
                       onPressed: (){
-                        debugPrint("Delete button clicked");
+                        debugPrint("Delete button clicked just now");
                         _delete();
                       },
                     ),

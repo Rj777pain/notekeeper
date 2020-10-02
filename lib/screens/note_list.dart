@@ -31,8 +31,14 @@ class NoteListState extends State<NoteList> {
             title: Center(
               child: Text(
           'Notes',
+          style: TextStyle(
+          color: Colors.white,
+          fontSize: 20,
+          ),
         ),
-            )),
+            ),
+        backgroundColor: Colors.blue,    
+            ),
         body: getNoteListView(),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
@@ -51,8 +57,8 @@ class NoteListState extends State<NoteList> {
         // ignore: missing_return
         itemBuilder: (BuildContext context, int position) {
           return Card(
-            color: Colors.white,
-            elevation: 2.0,
+            color: Colors.yellow,
+            elevation: 3.0,
             child: ListTile(
               leading: CircleAvatar(
                 backgroundColor: getPriorityColor(this.noteList[position].priority),
@@ -60,12 +66,13 @@ class NoteListState extends State<NoteList> {
               ),
               title: Text(
                 this.noteList[position].title,
-                style: textStyle,
+                style: textStyle(
+                fontStyle: FontStyle.italic,),
               ),
               subtitle: Text(this.noteList[position].date),
               trailing: GestureDetector(child: Icon(
                 Icons.delete,
-                color: Colors.grey,
+                color: Colors.grey[200],
               ),
               onTap: (){
                 _delete(context, noteList[position]);
@@ -83,7 +90,7 @@ class NoteListState extends State<NoteList> {
   //return priority color
   Color getPriorityColor(int priority){
     switch(priority){
-      case 1: return Colors.red; break;
+      case 1: return Colors.blue; break;
       case 2: return Colors.yellow; break;
       default: return Colors.yellow;
     }
